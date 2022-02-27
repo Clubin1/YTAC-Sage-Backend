@@ -417,9 +417,10 @@ app.get("/single", (req, res) => {
         }
         }
         }
-        ],
+    ],
     console.log(filtered)
     res.json(filtered)
 })
-app.listen(process.env.port || 5000);
-console.log("Web Server is listening at port " + (process.env.port || 5000));
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
